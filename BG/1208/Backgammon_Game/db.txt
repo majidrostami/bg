@@ -1,0 +1,282 @@
+USE [majidrostami]
+GO
+
+/****** Object:  Table [dbo].[BGSCORE]    Script Date: 05/12/2012 14:29:31 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[BGSCORE](
+	[login_id] [nvarchar](100) NOT NULL,
+	[games_played] [int] NOT NULL,
+	[games_won] [int] NOT NULL,
+	[games_gammoned] [int] NOT NULL,
+	[games_backgammoned] [int] NOT NULL,
+	[games_abondoned] [int] NOT NULL,
+	[high_score_games] [int] NOT NULL,
+	[low_score_games] [int] NOT NULL,
+	[score] [int] NOT NULL,
+ CONSTRAINT [BGSCORE_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[login_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREgames_playedDefault]  DEFAULT ((0)) FOR [games_played]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREgames_wonDefault]  DEFAULT ((0)) FOR [games_won]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREgames_gammonedDefault]  DEFAULT ((0)) FOR [games_gammoned]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREgames_backgammonedDefault]  DEFAULT ((0)) FOR [games_backgammoned]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREgames_abondonedDefault]  DEFAULT ((0)) FOR [games_abondoned]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREhigh_score_gamesDefault]  DEFAULT ((0)) FOR [high_score_games]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCORElow_score_gamesDefault]  DEFAULT ((0)) FOR [low_score_games]
+GO
+
+ALTER TABLE [dbo].[BGSCORE] ADD  CONSTRAINT [BGSCOREscoreDefault]  DEFAULT ((0)) FOR [score]
+GO
+
+
+
+
+USE [majidrostami]
+GO
+
+/****** Object:  Table [dbo].[FAMILY]    Script Date: 05/12/2012 14:31:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FAMILY](
+	[email] [nvarchar](150) NOT NULL,
+ CONSTRAINT [FAMILY_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+USE [majidrostami]
+GO
+
+/****** Object:  Table [dbo].[LOGIN]    Script Date: 05/12/2012 14:32:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[LOGIN](
+	[login_id] [nvarchar](100) NOT NULL,
+	[password] [nvarchar](150) NOT NULL,
+	[sid] [nvarchar](150) NOT NULL,
+	[locked] [bit] NOT NULL,
+	[role] [nvarchar](10) NOT NULL,
+	[trys] [int] NOT NULL,
+	[time_locked] [datetime] NULL,
+ CONSTRAINT [LOGIN_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[login_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[LOGIN] ADD  CONSTRAINT [LOGINlockedDefault]  DEFAULT ((0)) FOR [locked]
+GO
+
+ALTER TABLE [dbo].[LOGIN] ADD  CONSTRAINT [LOGINtrysDefault]  DEFAULT ((0)) FOR [trys]
+GO
+
+
+
+
+
+
+USE [majidrostami]
+GO
+
+/****** Object:  Table [dbo].[USER]    Script Date: 05/12/2012 14:32:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[USER](
+	[login_id] [nvarchar](100) NOT NULL,
+	[first_name] [nvarchar](100) NOT NULL,
+	[last_name] [nvarchar](100) NOT NULL,
+	[gender] [bit] NOT NULL,
+	[dob] [datetime] NULL,
+	[doj] [datetime] NOT NULL,
+	[status] [nvarchar](10) NOT NULL,
+ CONSTRAINT [USER_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[login_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[USER]  WITH CHECK ADD  CONSTRAINT [FK_USER_login] FOREIGN KEY([login_id])
+REFERENCES [dbo].[LOGIN] ([login_id])
+GO
+
+ALTER TABLE [dbo].[USER] CHECK CONSTRAINT [FK_USER_login]
+GO
+
+
+
+
+
+
+
+Tables 
+
+BGSCORE
+FAMILY
+LOGIN
+USER
+
+
+SPS
+createUser
+getCredentials
+getFamilyMembers
+
+
+ALTER PROCEDURE createUser
+	
+	@login_id nvarchar(100),
+	@password nvarchar(150),
+	@sid nvarchar(150),
+	@first_name nvarchar(100),
+	@last_name nvarchar(100),
+	@gender bit,
+	@dob datetime,
+	@doj datetime
+	
+	
+AS
+
+insert into LOGIN(login_id,password,sid,locked,role,trys,time_locked)
+values (@login_id, @password,@sid,0,'user',0,null)
+
+insert into [USER](login_id, first_name,last_name,gender,dob,doj,status)
+  values(@login_id,@first_name,@last_name,@gender,@dob,@doj,'active')
+
+insert into BGSCORE(login_id,games_played,games_won,games_gammoned,games_backgammoned,games_abondoned,high_score_games,low_score_games,score)
+values (@login_id,0,0,0,0,0,0,0,1000)
+
+	/* SET NOCOUNT ON */
+	RETURN
+
+
+
+
+ALTER PROCEDURE getCredentilas
+	
+	(
+	@loginId nvarchar(100) 
+	
+	)
+	
+AS
+	/* SET NOCOUNT ON */
+	select password,sid,locked,role,first_name, last_name,gender,dob,doj,status from login,[user] where (login.login_id = @loginId)
+	
+	and (login.login_id = [user].login_id)  
+	RETURN
+
+
+
+
+
+ALTER PROCEDURE dbo.getFamilyMember
+	
+	(
+	@email nvarchar(150)
+	)
+	
+AS
+	/* SET NOCOUNT ON */
+	SELECT email from [FAMILY] WHERE email = @email
+	
+	
+	RETURN
+
+
+
+
+
+
+
+
+
+ALTER PROCEDURE insertGameRecord
+	@player1 nvarchar(100),
+	@player2 nvarchar(100),
+	@winner smallint,
+	@abondoned bit,
+	@p1Doubles int,
+	@p2Doubles int,
+	@p1Pips int,
+	@p2Pips int,
+	@pipsAtEnd int,
+	@startTime datetime,	
+	@endTime datetime,
+	@nRolls int
+		
+AS
+DECLARE @intErrorCode INT
+
+BEGIN TRAN
+
+	INSERT INTO BGGAME(player1,player2,winner,abondoned,p1_doubles,p2_doubles,p1_pips_rolled, p2_pips_rolled, pips_at_end, start_time,end_time, number_of_rolls)
+	VALUES(@player1, @player2, @winner,@abondoned,@p1Doubles,@p2Doubles,@p1Pips, @p2Pips, @pipsAtEnd, @startTime, @endTime, @nRolls   )
+
+	UPDATE BGSCORE SET games_played = (games_played + 1) where login_id = @player1
+	
+	UPDATE BGSCORE SET games_played = (games_played + 1) where login_id = @player2  
+	
+	IF @winner = 1
+	BEGIN 
+		UPDATE BGSCORE SET games_won = (games_won + 1) where login_id = @player1
+	END
+	
+	IF @winner = 2
+	BEGIN 
+		UPDATE BGSCORE SET games_won = (games_won + 1) where login_id = @player2
+	END
+	
+
+SELECT @intErrorCode = @@ERROR
+    IF (@intErrorCode <> 0) GOTO PROBLEM
+
+COMMIT TRAN
+PROBLEM:
+IF (@intErrorCode <> 0) BEGIN
+PRINT 'Unexpected error occurred!'
+    ROLLBACK TRAN
+/* SET NOCOUNT ON */
+END

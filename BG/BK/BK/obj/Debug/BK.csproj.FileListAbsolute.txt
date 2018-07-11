@@ -1,0 +1,52 @@
+C:\ASPNET\SQL\BK\BK\bin\BK.dll
+C:\ASPNET\SQL\BK\BK\bin\BK.pdb
+C:\ASPNET\SQL\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\ASPNET\SQL\BK\BK\obj\Debug\BK.dll
+C:\ASPNET\SQL\BK\BK\obj\Debug\BK.pdb
+C:\Documents and Settings\Administrator\Desktop\BK\BK\bin\BK.dll
+C:\Documents and Settings\Administrator\Desktop\BK\BK\bin\BK.pdb
+C:\Documents and Settings\Administrator\Desktop\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\BK\BK\obj\Debug\BK.dll
+C:\Documents and Settings\Administrator\Desktop\BK\BK\obj\Debug\BK.pdb
+C:\Users\majid\Documents\Downloads\BK\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\majid\Documents\Downloads\BK\BK\BK\bin\BK.dll
+C:\Users\majid\Documents\Downloads\BK\BK\BK\bin\BK.pdb
+C:\Users\majid\Documents\Downloads\BK\BK\BK\obj\Debug\BK.dll
+C:\Users\majid\Documents\Downloads\BK\BK\BK\obj\Debug\BK.pdb
+C:\BK\BK\BK\bin\BK.dll
+C:\BK\BK\BK\bin\BK.pdb
+C:\BK\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\BK\BK\BK\obj\Debug\BK.dll
+C:\BK\BK\BK\obj\Debug\BK.pdb
+C:\WEBDEV\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\WEBDEV\BK\BK\bin\BK.dll
+C:\WEBDEV\BK\BK\bin\BK.pdb
+C:\WEBDEV\BK\BK\obj\Debug\BK.dll
+C:\WEBDEV\BK\BK\obj\Debug\BK.pdb
+C:\BK\BK\bin\BK.dll
+C:\BK\BK\bin\BK.pdb
+C:\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\BK\BK\obj\Debug\BK.dll
+C:\BK\BK\obj\Debug\BK.pdb
+C:\BG\BK\BK\bin\BK.dll
+C:\BG\BK\BK\bin\BK.pdb
+C:\BG\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\BG\BK\BK\obj\Debug\BK.dll
+C:\BG\BK\BK\obj\Debug\BK.pdb
+C:\stuff\BG\BK\BK\bin\BK.dll
+C:\stuff\BG\BK\BK\bin\BK.pdb
+C:\stuff\BG\BK\BK\obj\Debug\ResolveAssemblyReference.cache
+C:\stuff\BG\BK\BK\obj\Debug\BK.dll
+C:\stuff\BG\BK\BK\obj\Debug\BK.pdb
+F:\stuff\BG\BK\BK\bin\BK.dll.config
+F:\stuff\BG\BK\BK\bin\BK.dll
+F:\stuff\BG\BK\BK\bin\BK.pdb
+F:\stuff\BG\BK\BK\obj\Debug\BK.csprojResolveAssemblyReference.cache
+F:\stuff\BG\BK\BK\obj\Debug\BK.dll
+F:\stuff\BG\BK\BK\obj\Debug\BK.pdb
+D:\stuff\BG\BK\BK\bin\BK.dll.config
+D:\stuff\BG\BK\BK\bin\BK.dll
+D:\stuff\BG\BK\BK\bin\BK.pdb
+D:\stuff\BG\BK\BK\obj\Debug\BK.csprojResolveAssemblyReference.cache
+D:\stuff\BG\BK\BK\obj\Debug\BK.dll
+D:\stuff\BG\BK\BK\obj\Debug\BK.pdb

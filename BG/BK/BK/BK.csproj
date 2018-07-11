@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EB769CE-FB82-44AE-B696-3450FB0DD2AA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BK</RootNamespace>
+    <AssemblyName>BK</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bg.html" />
+    <Content Include="bghandler.asmx" />
+    <Content Include="css\default.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\bk2.bmp" />
+    <Content Include="images\bk3.bmp" />
+    <Content Include="images\bk3v2.gif" />
+    <Content Include="images\bk5.gif" />
+    <Content Include="images\bk5v2.gif" />
+    <Content Include="images\blackdice\1.GIF" />
+    <Content Include="images\blackdice\2.GIF" />
+    <Content Include="images\blackdice\3.GIF" />
+    <Content Include="images\blackdice\4.GIF" />
+    <Content Include="images\blackdice\5.GIF" />
+    <Content Include="images\blackdice\6.GIF" />
+    <Content Include="images\img01.jpg" />
+    <Content Include="images\img02.jpg" />
+    <Content Include="images\img03.jpg" />
+    <Content Include="images\img04.jpg" />
+    <Content Include="images\img05.jpg" />
+    <Content Include="images\img06.jpg" />
+    <Content Include="images\pieces\adb.gif" />
+    <Content Include="images\pieces\aub.gif" />
+    <Content Include="images\pieces\bluetrans.gif" />
+    <Content Include="images\pieces\image001.gif" />
+    <Content Include="images\pieces\pp2.gif" />
+    <Content Include="images\pieces\redtans.gif" />
+    <Content Include="images\pieces\redtans2.gif" />
+    <Content Include="images\pieces\tansparent1.gif" />
+    <Content Include="images\pieces\v151461.jpg" />
+    <Content Include="images\pieces\v152101.jpg" />
+    <Content Include="images\pieces\v152102.jpg" />
+    <Content Include="images\pieces\v152103.jpg" />
+    <Content Include="images\pieces\v152104.jpg" />
+    <Content Include="images\pieces\v152105.jpg" />
+    <Content Include="images\pieces\v152106.gif" />
+    <Content Include="images\pieces\v152106.jpg" />
+    <Content Include="images\pieces\v152107.jpg" />
+    <Content Include="images\pieces\v152108.jpg" />
+    <Content Include="images\pieces\v152109.jpg" />
+    <Content Include="images\pieces\v152111.jpg" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="scripts\script.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bghandler.asmx.cs">
+      <DependentUpon>bghandler.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bgTables.aspx.cs">
+      <DependentUpon>bgTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bgTables.aspx.designer.cs">
+      <DependentUpon>bgTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bms.aspx.cs">
+      <DependentUpon>bms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bms.aspx.designer.cs">
+      <DependentUpon>bms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\BGGame.cs" />
+    <Compile Include="classes\DBInterface.cs" />
+    <Compile Include="classes\Emailer.cs" />
+    <Compile Include="classes\Encoder.cs" />
+    <Compile Include="classes\Globals.cs" />
+    <Compile Include="classes\Login.cs" />
+    <Compile Include="classes\Param.cs" />
+    <Compile Include="classes\RegistrationClass.cs" />
+    <Compile Include="classes\Table.cs" />
+    <Compile Include="classes\User.cs" />
+    <Compile Include="FamilyPage.aspx.cs">
+      <DependentUpon>FamilyPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyPage.aspx.designer.cs">
+      <DependentUpon>FamilyPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="photoService.asmx.cs">
+      <DependentUpon>photoService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PicturePlayer.aspx.cs">
+      <DependentUpon>PicturePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PicturePlayer.aspx.designer.cs">
+      <DependentUpon>PicturePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PictureSelection.aspx.cs">
+      <DependentUpon>PictureSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PictureSelection.aspx.designer.cs">
+      <DependentUpon>PictureSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registeration.aspx.cs">
+      <DependentUpon>Registeration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registeration.aspx.designer.cs">
+      <DependentUpon>Registeration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="bTables.aspx.cs">
+      <DependentUpon>bTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bTables.aspx.designer.cs">
+      <DependentUpon>bTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoundMangerTest.aspx.cs">
+      <DependentUpon>SoundMangerTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoundMangerTest.aspx.designer.cs">
+      <DependentUpon>SoundMangerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucFooter.ascx.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControls\ucFooter.ascx.designer.cs">
+      <DependentUpon>ucFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucHeader.ascx.cs">
+      <DependentUpon>ucHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userControls\ucHeader.ascx.designer.cs">
+      <DependentUpon>ucHeader.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database1.mdf">
+    </Content>
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="bgTables.aspx" />
+    <Content Include="bms.aspx" />
+    <Content Include="css\outlawstyle.css" />
+    <Content Include="default.aspx" />
+    <Content Include="FamilyPage.aspx" />
+    <Content Include="familyPics\scan0001.jpg" />
+    <Content Include="familyPics\scan0002.jpg" />
+    <Content Include="familyPics\scan0003.jpg" />
+    <Content Include="familyPics\scan0005.jpg" />
+    <Content Include="familyPics\scan0006.jpg" />
+    <Content Include="familyPics\scan0007.jpg" />
+    <Content Include="familyPics\scan0008.jpg" />
+    <Content Include="familyPics\scan0009.jpg" />
+    <Content Include="familyPics\scan0010.jpg" />
+    <Content Include="familyPics\scan0011.jpg" />
+    <Content Include="familyPics\scan0012.jpg" />
+    <Content Include="images\0quanchi-mk4.gif" />
+    <Content Include="images\barrel_1.gif" />
+    <Content Include="images\barrel_2.gif" />
+    <Content Include="images\barrel_3.gif" />
+    <Content Include="images\barrel_4.gif" />
+    <Content Include="images\bullet.gif" />
+    <Content Include="images\bullet_2.gif" />
+    <Content Include="images\bullet_3.gif" />
+    <Content Include="images\cactus_1.gif" />
+    <Content Include="images\cactus_2.gif" />
+    <Content Include="images\cactus_3.gif" />
+    <Content Include="images\cactus_4.gif" />
+    <Content Include="images\cowboy_dead.gif" />
+    <Content Include="images\cowboy_move.gif" />
+    <Content Include="images\cowboy_reload.gif" />
+    <Content Include="images\cowboy_shoot1.gif" />
+    <Content Include="images\cowboy_shoot2.gif" />
+    <Content Include="images\cowboy_still.gif" />
+    <Content Include="images\dead.gif" />
+    <Content Include="images\environment.gif" />
+    <Content Include="images\outlaw_dead.gif" />
+    <Content Include="images\outlaw_move.gif" />
+    <Content Include="images\outlaw_reload.gif" />
+    <Content Include="images\outlaw_shoot1.gif" />
+    <Content Include="images\outlaw_shoot2.gif" />
+    <Content Include="images\outlaw_still.gif" />
+    <Content Include="images\reload.gif" />
+    <Content Include="images\shoot_1.gif" />
+    <Content Include="images\shoot_2.gif" />
+    <Content Include="images\tombstone_1.gif" />
+    <Content Include="images\tombstone_2.gif" />
+    <Content Include="images\tombstone_3.gif" />
+    <Content Include="images\tombstone_4.gif" />
+    <Content Include="images\tombstone_5.gif" />
+    <Content Include="images\tombstone_6.gif" />
+    <Content Include="images\tombstone_rise.gif" />
+    <Content Include="images\top.gif" />
+    <Content Include="images\tumbleweed_1.gif" />
+    <Content Include="images\tumbleweed_2.gif" />
+    <Content Include="images\tumbleweed_3.gif" />
+    <Content Include="images\tumbleweed_move.gif" />
+    <Content Include="outlaw.htm" />
+    <Content Include="photoService.asmx" />
+    <Content Include="photos\interesting\00019586.jpg" />
+    <Content Include="photos\interesting\01.jpg" />
+    <Content Include="photos\interesting\ellen.jpg" />
+    <Content Include="photos\interesting\haircut.jpg" />
+    <Content Include="photos\interesting\hhh.bmp" />
+    <Content Include="photos\interesting\kharid.jpg" />
+    <Content Include="photos\interesting\minitowers.jpg" />
+    <Content Include="photos\interesting\photo051806.jpg" />
+    <Content Include="photos\interesting\photo101006.jpg" />
+    <Content Include="photos\interesting\r1459394032.jpg" />
+    <Content Include="photos\interesting\ShowLetter333.jpg" />
+    <Content Include="photos\interesting\ShowLetter444.jpg" />
+    <Content Include="photos\interesting\ShowLetter456.jpg" />
+    <Content Include="photos\interesting\snake.jpg" />
+    <Content Include="photos\interesting\stadium.jpg" />
+    <Content Include="photos\interesting\steamengine1.jpg" />
+    <Content Include="photos\interesting\ultrasound.jpg" />
+    <Content Include="photos\interesting\Walschaerts_motion.gif" />
+    <Content Include="photos\interesting\_41177302_ratsnake_ap_203.gif" />
+    <Content Include="photos\opticillusion\018.jpg" />
+    <Content Include="photos\opticillusion\05b.gif" />
+    <Content Include="photos\opticillusion\07b.gif" />
+    <Content Include="photos\opticillusion\1-11.jpg" />
+    <Content Include="photos\opticillusion\1-12.jpg" />
+    <Content Include="photos\opticillusion\1-14.gif" />
+    <Content Include="photos\opticillusion\1-15.gif" />
+    <Content Include="photos\opticillusion\1-16.gif" />
+    <Content Include="photos\opticillusion\1-18.gif" />
+    <Content Include="photos\opticillusion\1-2.gif" />
+    <Content Include="photos\opticillusion\1-23.jpg" />
+    <Content Include="photos\opticillusion\1-25.gif" />
+    <Content Include="photos\opticillusion\1-29.gif" />
+    <Content Include="photos\opticillusion\1-30.gif" />
+    <Content Include="photos\opticillusion\1-32.jpg" />
+    <Content Include="photos\opticillusion\1-34.gif" />
+    <Content Include="photos\opticillusion\1-35.jpg" />
+    <Content Include="photos\opticillusion\1-36.gif" />
+    <Content Include="photos\opticillusion\1-38.gif" />
+    <Content Include="photos\opticillusion\1-4.gif" />
+    <Content Include="photos\opticillusion\1-45.jpg" />
+    <Content Include="photos\opticillusion\1-46.jpg" />
+    <Content Include="photos\opticillusion\1-47.gif" />
+    <Content Include="photos\opticillusion\1-53.jpg" />
+    <Content Include="photos\opticillusion\1-57.jpg" />
+    <Content Include="photos\opticillusion\1-6.gif" />
+    <Content Include="photos\opticillusion\1-60.gif" />
+    <Content Include="photos\opticillusion\1-61.jpg" />
+    <Content Include="photos\opticillusion\1-7.gif" />
+    <Content Include="photos\opticillusion\1-8.gif" />
+    <Content Include="photos\opticillusion\1144.jpg" />
+    <Content Include="photos\opticillusion\15oug5f.jpg" />
+    <Content Include="photos\opticillusion\15ouiw0.jpg" />
+    <Content Include="photos\opticillusion\15oup0y.jpg" />
+    <Content Include="photos\opticillusion\15ousfo.jpg" />
+    <Content Include="photos\opticillusion\15ouumg.jpg" />
+    <Content Include="photos\opticillusion\15ouvzs.jpg" />
+    <Content Include="photos\opticillusion\15ouyo7.jpg" />
+    <Content Include="photos\opticillusion\15ov1gy.jpg" />
+    <Content Include="photos\opticillusion\2.jpg" />
+    <Content Include="photos\opticillusion\5optic.gif" />
+    <Content Include="photos\opticillusion\9people.jpg" />
+    <Content Include="photos\opticillusion\crazyillusion.jpg" />
+    <Content Include="photos\opticillusion\crazystars.jpg" />
+    <Content Include="photos\opticillusion\cube_illusion.jpg" />
+    <Content Include="photos\opticillusion\hoohoo.jpg" />
+    <Content Include="photos\opticillusion\mars2.jpg" />
+    <Content Include="photos\opticillusion\New Image.JPG" />
+    <Content Include="photos\opticillusion\optical3.jpg" />
+    <Content Include="photos\opticillusion\optical4.jpg" />
+    <Content Include="photos\opticillusion\optische%2520elefant%2520wieviel%2520beine.jpg" />
+    <Content Include="photos\opticillusion\punkze.jpg" />
+    <Content Include="photos\opticillusion\rabduc.jpg" />
+    <Content Include="photos\opticillusion\Roadmirage.jpg" />
+    <Content Include="photos\opticillusion\ShowLetter.jpg" />
+    <Content Include="photos\opticillusion\spirals2.gif" />
+    <Content Include="photos\opticillusion\untitled.bmp" />
+    <Content Include="photos\opticillusion\untitled2.bmp" />
+    <Content Include="photos\opticillusion\untitled3.bmp" />
+    <Content Include="photos\opticillusion\untitled4.bmp" />
+    <Content Include="photos\opticillusion\untitled5.bmp" />
+    <Content Include="photos\opticillusion\untitled6.bmp" />
+    <Content Include="photos\opticillusion\untitled7.bmp" />
+    <Content Include="photos\opticillusion\untitled8.bmp" />
+    <Content Include="photos\opticillusion\untitled9.bmp" />
+    <Content Include="photos\opticillusion\zzw.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0011.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0012.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0013.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0014.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0019.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0020.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0023.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0025.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0026.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0027.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0028.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0029.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0030.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0031.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0032.JPG" />
+    <Content Include="photos\SDTOPHILLY\100_0033.JPG" />
+    <Content Include="PicturePlayer.aspx" />
+    <Content Include="PictureSelection.aspx" />
+    <Content Include="Registeration.aspx" />
+    <Content Include="scripts\outlawscript.js" />
+    <Content Include="Site1.Master" />
+    <Content Include="bTables.aspx" />
+    <Content Include="SoundManager2\script\soundmanager2-jsmin.js" />
+    <Content Include="SoundManager2\script\soundmanager2-nodebug-jsmin.js" />
+    <Content Include="SoundManager2\script\soundmanager2-nodebug.js" />
+    <Content Include="SoundManager2\script\soundmanager2.js" />
+    <Content Include="SoundManager2\sounds\1hz-10khz-sweep.mp3" />
+    <Content Include="SoundManager2\sounds\440hz.mp3" />
+    <Content Include="SoundManager2\sounds\880hz.mp3" />
+    <Content Include="SoundManager2\sounds\background0.mp3" />
+    <Content Include="SoundManager2\sounds\background1.mp3" />
+    <Content Include="SoundManager2\sounds\background2.mp3" />
+    <Content Include="SoundManager2\sounds\bass.mp3" />
+    <Content Include="SoundManager2\sounds\button-0.mp3" />
+    <Content Include="SoundManager2\sounds\button-1.mp3" />
+    <Content Include="SoundManager2\sounds\click-high.mp3" />
+    <Content Include="SoundManager2\sounds\click-low.mp3" />
+    <Content Include="SoundManager2\sounds\coins.mp3" />
+    <Content Include="SoundManager2\sounds\fancy-beer-bottle-pop.mp3" />
+    <Content Include="SoundManager2\sounds\going_outside.mp3" />
+    <Content Include="SoundManager2\sounds\mak.mp3" />
+    <Content Include="SoundManager2\sounds\mouseover.mp3" />
+    <Content Include="SoundManager2\sounds\mouseover2.mp3" />
+    <Content Include="SoundManager2\sounds\mouseover3.mp3" />
+    <Content Include="SoundManager2\sounds\office_lobby.mp3" />
+    <Content Include="SoundManager2\sounds\rain.mp3" />
+    <Content Include="SoundManager2\sounds\select.mp3" />
+    <Content Include="SoundManager2\sounds\sine, square, sawtooth, rando.mp3" />
+    <Content Include="SoundManager2\sounds\walking.mp3" />
+    <Content Include="SoundManager2\swf\soundmanager2.swf" />
+    <Content Include="SoundManager2\swf\soundmanager2_debug.swf" />
+    <Content Include="SoundManager2\swf\soundmanager2_flash9.swf" />
+    <Content Include="SoundManager2\swf\soundmanager2_flash9_debug.swf" />
+    <Content Include="SoundMangerTest.aspx" />
+    <Content Include="userControls\ucFooter.ascx" />
+    <Content Include="userControls\ucHeader.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="photos\opticillusion\optical.frog" />
+    <None Include="photos\opticillusion\optical.vase" />
+    <None Include="SoundManager2\src\make-flash8.bat" />
+    <None Include="SoundManager2\src\make-flash8.sh" />
+    <None Include="SoundManager2\src\make-flash9.bat" />
+    <None Include="SoundManager2\src\make-flash9.sh" />
+    <None Include="SoundManager2\src\SoundManager2.as" />
+    <None Include="SoundManager2\src\SoundManager2_AS3.as" />
+    <None Include="SoundManager2\src\SoundManager2_SMSound_AS3.as" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SoundManager2\demo\" />
+    <Folder Include="SoundManager2\doc\" />
+    <Folder Include="SoundManager2\troubleshoot\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55631</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

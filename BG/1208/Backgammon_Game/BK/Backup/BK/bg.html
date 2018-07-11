@@ -1,0 +1,228 @@
+<html>
+<head>
+    
+
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <!-- include SM2 library -->
+    
+    <!-- configure it for your use -->
+
+    <title>back gammon </title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+ 
+
+
+</head>
+<body onload="StartBgGame('Persian')" onunload="leaving()">
+    <table>
+        <tr>
+            <td>
+                <a onclick="areaClick(0)" title="">
+                    <div id="area00">
+                    </div>
+                </a><a onclick="areaClick(1)" title="">
+                    <div id="area01">
+                    </div>
+                </a><a  onclick="areaClick(2)" title="">
+                    <div id="area02">
+                    </div>
+                </a><a onclick="areaClick(3)" title="">
+                    <div id="area03">
+                    </div>
+                </a><a onclick="areaClick(4)" title="">
+                    <div id="area04">
+                    </div>
+                </a><a onclick="areaClick(5)" title="">
+                    <div id="area05">
+                    </div>
+                </a><a onclick="areaClick(6)" title="">
+                    <div id="area06">
+                    </div>
+                </a><a onclick="areaClick(7)" title="">
+                    <div id="area07">
+                    </div>
+                </a><a onclick="areaClick(8)" title="">
+                    <div id="area08">
+                    </div>
+                </a><a onclick="areaClick(9)" title="">
+                    <div id="area09">
+                    </div>
+                </a><a onclick="areaClick(10)" title="">
+                    <div id="area10">
+                    </div>
+                </a><a onclick="areaClick(11)" title="">
+                    <div id="area11">
+                    </div>
+                </a><a onclick="areaClick(12)" title="">
+                    <div id="area12">
+                    </div>
+                </a><a onclick="areaClick(13)" title="">
+                    <div id="area13">
+                    </div>
+                </a><a onclick="areaClick(14)" title="">
+                    <div id="area14">
+                    </div>
+                </a><a onclick="areaClick(15)" title="">
+                    <div id="area15">
+                    </div>
+                </a><a onclick="areaClick(16)" title="">
+                    <div id="area16">
+                    </div>
+                </a><a onclick="areaClick(17)" title="">
+                    <div id="area17">
+                    </div>
+                </a><a onclick="areaClick(18)" title="">
+                    <div id="area18">
+                    </div>
+                </a><a onclick="areaClick(19)" title="">
+                    <div id="area19">
+                    </div>
+                </a><a onclick="areaClick(20)" title="">
+                    <div id="area20">
+                    </div>
+                </a><a  onclick="areaClick(21)" title="">
+                    <div id="area21">
+                    </div>
+                </a><a onclick="areaClick(22)" title="">
+                    <div id="area22">
+                    </div>
+                </a><a onclick="areaClick(23)" title="">
+                    <div id="area23">
+                    </div>
+                </a><a onclick="areaClick(24)" title="">
+                    <div id="area24">
+                    </div>
+                </a><a onclick="areaClick(25)" title="">
+                    <div id="area25">
+                    </div>
+                </a><a onclick="areaClick(26)" title="">
+                    <div id="area26">
+                    </div>
+                </a><a  onclick="areaClick(27)" title="">
+                    <div id="area27">
+                    </div>
+                </a>
+                <div id="playingArea">
+                </div>
+            </td>
+            <td valign="top">
+                <table>
+                    <tr align="left">
+                        <td>
+                            <table><tr><td><a href="#" id="pl2">Player 2 </a></td><td>&nbsp&nbsp</td><td>
+                            <input type ="button" id="forceleave"  onclick="evictOtherPlayer()" value="Evict" > </input></td></tr></table>
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            Score: 0
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td id="topPlayerPips">
+                            Pips: 167
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose Board Type:
+                            <select id="boardType" onchange="bgOptionsChange()">
+                                <option name="Persian" value="Persian">Persian Board </option>
+                                <option name="Classic" value="Classic">Classic Board</option>
+                            </select>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="soundRadio" value="soundon" checked> Sound On </input>
+                            <br />
+                            <input type="radio" name="soundRadio" value="soundoff"> Sound Off </input>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            Current Turn
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" id="currentTurn" >
+                            Buttom player
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <table cellspacing="40">
+                                    <tr>
+                                        <td>
+                                            <img id="die1" src="images/blackdice/6.GIF"></img>
+                                        </td>
+                                        <td>
+                                            <img id="die2" src="images/blackdice/6.GIF"></img>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                Playback Message
+                                <br />
+                                <select id="playbackSound">
+                                    <option name="sound0" value="sound0">Pick Playback Message </option>
+                                    <option name="sound1" value="sound1">sound1 </option>
+                                </select>
+                                <table cellspacing="15">
+                                    <tr>
+                                        <td>
+                                            <input type="submit" value="ROLL" align="center" onclick="rollDice()" id="rollButton"></input>
+                                        </td>
+                                        <td>
+                                            <input type="submit" value="UNDO" align="center" onclick="undoTurn()"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <input id="endTurnButton" type="submit" value="End Turn" align="center" onclick="endTurn()" />
+                                        </td>
+                                        <td align="center">
+                                            <input id="btnStartGame" style="visibility:visible" type="submit" value="Start Game" align="center" onclick="stratTheGame()" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="#" id="pl1">Player 1 </a>
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            Score: 0
+                        </td>
+                    </tr>
+                    <tr align="left">
+                        <td id="buttomPlayerPips">
+                            Pips: 167
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>OutLaw</title>
+		<link rel="stylesheet" href="css/outlawstyle.css" type="text/css">
+		<script type="text/javascript" src="scripts/outlawscript.js"></script>
+	</head>
+	<body onLoad="readCookie()">
+		<center>
+			<div id="container">
+				<div id="top" align="center">
+					<table id="stats">
+						<tr>
+							<td id="bullets" class="info" width="110">
+								<img id="b6" class="no" src="images\bullet_3.gif">
+								<img id="b5" class="no" src="images\bullet_3.gif">
+								<img id="b4" class="no" src="images\bullet_3.gif">
+								<img id="b3" class="no" src="images\bullet_3.gif">
+								<img id="b2" class="no" src="images\bullet_3.gif">
+								<img id="b1" class="no" src="images\bullet_3.gif">
+							</td>
+							<td class="info" width="90">
+								LIVES: <span class="scores" id = "lives">0</span>
+							<td>
+							<td class="info" width="90">
+								TIME: <span class="scores" id="timer">0:00</span>
+							<td>
+							<td class="info" width="320">
+								
+							<td>
+							<td class="info">
+								SCORE: <span class="scores"  id = "sc" >0</span>
+							<td>
+							<td class="links">
+								<a href="javascript:void(0);" id="help" class="topLink" onMouseOver="showHelp()" onMouseOut="resetHelp()">HELP</a> <span class="bullet">&bull;</span> <a class="topLink" href="javascript:quit()">QUIT</a>
+							<td>
+						</tr>
+					</table>
+				</div>
+				<div id="playingArea" style="display:none;">
+					<img id="Lbullet" src="images\bullet_2.gif">
+					<img id="Rbullet" src="images\bullet_2.gif">
+					<img id="goodGuy" src="images\cowboy_still.gif">
+					<img id="badGuy" src="images\outlaw_still.gif">
+					<!--bgsound id = "sound1" src = "1.mp3" autostart = "true" loop = "true"--> 
+					<!--<img id = "ball" src="ball.gif">-->
+				</div>
+				<div id="screen">
+				<div class="subtitles">
+					<br><br>
+					Choose Difficulty</div><br>
+					<a href="javascript:init(0);">Novice</a><br>
+					<a href="javascript:init(1)">Standard</a><br>
+					<a href="javascript:init(2)">Expert</a>
+					<br><br><br><br>
+					<div class="subtitles">High Scores</div><br>
+						<span class="text" id="p0"></span><br>
+						<span class="text" id="p2"></span><br>
+						<span class="text" id="p4"></span>
+					<br><br><br><br>
+					<div class="subtitles">Authors</div><br>
+					<span class="text">
+						Majid Rostami<br>
+						Jesus Buenrostro
+					</span>
+				</div>
+			</div>
+		</center>
+		<div id="helpinfo">
+			<b>Character Control:</b><br><br>
+			<i>Mouse</i>
+			<ul>
+				<li>Move mouse within playing area to move character.</li>
+				<li>Left click mouse to shoot.</li>
+				<li>Right click mouse to reload.</li>
+			</ul>
+			<i>Keyboard</i>
+			<ul>
+				<li>Use left, up, right, and down arrows to move character.</li>
+				<li>Use space bar to shoot.</li>
+				<li>Use R to reload.</li>
+			</ul>
+			<br><br>
+			<b>Rules:</b><br><br>
+			Each outlaw kill earns you one point. Use barrels, cactuses, tombstones, and tumbleweeds as protection.  Shooting these items destroys them but does
+			not earn you or cause you to lose any points.  You have three lives and no time limit.  Objective is to earn the largest number of points before 
+			game is over.  Doing so will get you name on the scoreboard.
+		</div>
+	</body>
+</html>

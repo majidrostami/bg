@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="BK.Site1" %>
+<%@ Register TagPrefix="CP" TagName="headerUc" Src="userControls/ucHeader.ascx" %>
+<%@ Register TagPrefix="CP" TagName="footerUc" Src="userControls/ucFooter.ascx" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Ajax Backgammon</title>
+<script type="text/javascript" src="scripts/script.js"></script>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            width: 194px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form2" runat="server">
+<div id="wrapper">
+<!-- start header -->
+
+<CP:headerUc  runat="server" />
+<!-- end header -->
+    <div id="page">
+	<!-- start content -->
+    
+    <div id="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    <!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+            <asp:Panel ID="Panel1" runat="server">
+            <li id="search">
+				<h2>Login</h2>
+					<fieldset>
+					
+                    
+                    <table>
+                    
+                    <tr><td>
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" 
+                            Font-Size="Small" ForeColor="Red"></asp:Label></td></tr>
+                    <tr>
+                    <td>
+                    <asp:TextBox ID="emailBox" runat="server" class="login"></asp:TextBox></tr>
+                    </td>
+                    <tr>
+                    <td>
+                    <asp:TextBox ID="passwordBox" runat="server" class="login"  TextMode="Password"></asp:TextBox>
+                    </td>
+                    <td><asp:Button ID="Button1" runat="server" Text="login" class="loginButton" 
+                            onclick="Button1_Click" Height="23px"/></td>
+                    </tr>
+                    <tr><td><a href="#">Forgot Password</a></td></tr>
+                    <tr><td><a href="Registeration.aspx">Register</a></td></tr>
+    			    </table>
+					</fieldset>
+					
+					
+				</li>
+			
+            
+            
+            </asp:Panel>
+            <asp:Panel ID="Panel2" runat="server">
+            <li><h2>
+                <asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>
+            </h2>
+            <ul>
+            <li>
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                    onclick="btnLogout_Click" /></li>
+            </ul>
+            </li>
+            </asp:Panel>
+			<li>
+				<h2>Fun Stuff</h2>
+				<ul>
+					<li><a href="bTables.aspx">Play Backgammon</a></li>
+					<li><a href="outlaw.htm">Play Outlaw</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+					<li><a href="#">Eget tempor eget nonummy</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Cool Stuff</h2>
+				<ul>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+					<li><a href="#">Eget tempor eget nonummy</a></li>
+					<li><a href="#">Nec metus sed donec</a></li>
+					<li><a href="#">Magna lacus bibendum mauris</a></li>
+					<li><a href="#">Velit semper nisi molestie</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page --></div>
+<CP:footerUc ID="HeaderUc1"  runat="server" />
+    </form>
+</body>
+</html>
+

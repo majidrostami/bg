@@ -1,0 +1,117 @@
+body {
+	font-family: Verdana;
+}
+
+div.subtitles {
+	font-size: 18px;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #522202;
+}
+
+span.text {
+	color: #522202;
+	font-size: 14px;
+	text-align: center;
+}
+
+
+td.info {
+	text-align: left;
+	color: #CE9D75;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+td.links, a.topLink:link, a.topLink:visited, a.topLink:active, a.topLink:hover {
+	text-align: right;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+
+span.scores {
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+span.bullet {
+	color: #CE9D75;
+}
+
+a:link, a:visited, a:active {
+	font-size: 14px;
+	color: #522202;
+	text-decoration: none;
+}
+
+a:hover {
+	font-variant: normal;
+	text-decoration: overline underline;
+}
+
+ul {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+img {
+	position: absolute;
+}
+
+img.no {
+	position: static;
+}
+
+
+#container {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+#playingArea {
+	width: 990px;
+	height: 530px;
+	background-image: url('../images/environment.gif');
+	overflow: hidden;
+	border: 1px solid #522202;
+	cursor: url('../images/cursor.cur');
+}
+
+#top {
+	width: 990px;
+	height: 83px;
+	background-image: url('../images/top.gif');
+}
+
+#stats {
+	height: 83px;
+	width: 950px;
+}
+
+#helpinfo {
+	position: absolute;
+	visibility: hidden;
+	top: 60px;
+	left: 706px;
+	width: 400px;
+	padding: 5px;
+	background-image:url('../images/helpbg.png');
+	border: 1px solid black;
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+#badGuy {
+	position: absolute;	     
+}
+
+#goodGuy {
+	position: absolute;
+}
+
+#Lbullet{
+	position: absolute;
+}
