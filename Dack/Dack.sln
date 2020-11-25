@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dack", "Dack\Dack.csproj", "{2CE5CCA8-EF1D-46BA-B77F-49FD35B1F4F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dack.Tests", "Dack.Tests\Dack.Tests.csproj", "{B83767A3-9C7D-4B76-A9C6-BF2CCE6E01F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CE5CCA8-EF1D-46BA-B77F-49FD35B1F4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE5CCA8-EF1D-46BA-B77F-49FD35B1F4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE5CCA8-EF1D-46BA-B77F-49FD35B1F4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE5CCA8-EF1D-46BA-B77F-49FD35B1F4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83767A3-9C7D-4B76-A9C6-BF2CCE6E01F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83767A3-9C7D-4B76-A9C6-BF2CCE6E01F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83767A3-9C7D-4B76-A9C6-BF2CCE6E01F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83767A3-9C7D-4B76-A9C6-BF2CCE6E01F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B04279E-7A59-48DF-94A3-5A87C55DA006}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,66 @@
+﻿@model Dack.Models.EmployeeSearchCriteria
+
+@{
+	ViewBag.Title = "Employee Search";
+}
+
+<script language="javascript" type="text/javascript">
+	function GetSubDepartments(_departmentId) {
+		var procemessage = "<option value='0'> Please wait...</option>";
+		$("#ddlsubDepartment").html(procemessage).show();
+		var url = "/EmployeeSearch/GetSubDepartmentByDepartmentId/";
+
+		$.ajax({
+			url: url,
+			data: { departmentId: _departmentId },
+			cache: false,
+			type: "POST",
+			success: function (data) {
+				var markup = "<option value='0'>Select sub department</option>";
+				for (var x = 0; x < data.length; x++) {
+					markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+				}
+				$("#ddlsubDepartment").html(markup).show();
+			},
+			error: function (reponse) {
+				alert("error : " + reponse);
+			}
+		});
+	}
+
+	function displayEmployees() {
+		var url = "/EmployeeSearch/GetEmployees/";
+		var subDepartmentID = $("#ddlsubDepartment").val();
+		var departmentID = $("#ddlDepartment").val();
+		$.ajax({
+			url: url,
+			data: { subDepartmentId: subDepartmentID, departmentId: departmentID },
+			cache: false,
+			type: "POST",
+			success: function (data) {
+				alert(data)
+			},
+			error: function (xhr, status, error) {
+
+				alert(xhr.responseText);
+			}
+		});
+	}
+</script>
+@using (Html.BeginForm("DisplayEmployees", "EmployeeSearch", FormMethod.Post))
+{
+	<h2>Define your search criteria</h2>
+
+	@Html.DropDownListFor(m => m.DepartmentID, ViewBag.Departments as SelectList, "Select Department", new { @id = "ddlDepartment", @style = "width:200px;", @onchange = "javascript:GetSubDepartments(this.value);" })
+	<br />
+	<br />
+
+	@*<select id="ddlsubDepartment" name="ddlsubDepartment" style="width: 200px">
+		</select>*@
+	@Html.DropDownListFor(m => m.SubDepartmentID, Enumerable.Empty<SelectListItem>(), "Select Sub Department", new { @id = "ddlsubDepartment" })
+
+	<br />
+	<br />
+	<input type="submit" value="Submit" onclick="displayEmployees()" />
+
+}
