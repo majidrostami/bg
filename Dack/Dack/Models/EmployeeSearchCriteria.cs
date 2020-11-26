@@ -9,6 +9,8 @@ namespace Dack.Models
 	{
 		public int DepartmentID { get; set; }
 		public int SubDepartmentID { get; set; }
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
 
 	}
 }

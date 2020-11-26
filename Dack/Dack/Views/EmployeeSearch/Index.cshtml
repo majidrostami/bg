@@ -3,6 +3,17 @@
 @{
 	ViewBag.Title = "Employee Search";
 }
+<style>
+	table, th, td {
+		border: none;
+		padding: 5px;
+	}
+
+	table {
+		border-spacing: 15px;
+	}
+</style>
+
 
 <script language="javascript" type="text/javascript">
 	function GetSubDepartments(_departmentId) {
@@ -27,40 +38,29 @@
 			}
 		});
 	}
-
-	function displayEmployees() {
-		var url = "/EmployeeSearch/GetEmployees/";
-		var subDepartmentID = $("#ddlsubDepartment").val();
-		var departmentID = $("#ddlDepartment").val();
-		$.ajax({
-			url: url,
-			data: { subDepartmentId: subDepartmentID, departmentId: departmentID },
-			cache: false,
-			type: "POST",
-			success: function (data) {
-				alert(data)
-			},
-			error: function (xhr, status, error) {
-
-				alert(xhr.responseText);
-			}
-		});
-	}
 </script>
 @using (Html.BeginForm("DisplayEmployees", "EmployeeSearch", FormMethod.Post))
 {
-	<h2>Define your search criteria</h2>
 
-	@Html.DropDownListFor(m => m.DepartmentID, ViewBag.Departments as SelectList, "Select Department", new { @id = "ddlDepartment", @style = "width:200px;", @onchange = "javascript:GetSubDepartments(this.value);" })
-	<br />
-	<br />
-
-	@*<select id="ddlsubDepartment" name="ddlsubDepartment" style="width: 200px">
-		</select>*@
-	@Html.DropDownListFor(m => m.SubDepartmentID, Enumerable.Empty<SelectListItem>(), "Select Sub Department", new { @id = "ddlsubDepartment" })
-
-	<br />
-	<br />
-	<input type="submit" value="Submit" onclick="displayEmployees()" />
-
+<h2>Define your search criteria</h2>
+<br />
+<table>
+	<tr>
+		<td><label> First Name: </label></td>
+		<td>@Html.TextBoxFor(m => m.FirstName, new { @id = "txtFirstName", @style = "width:200px;" })</td>
+	</tr>
+	<tr>
+		<td><label> Last Name: </label></td>
+		<td>@Html.TextBoxFor(m => m.LastName, new { @id = "txtLastName", @style = "width:200px;" })</td>
+	</tr>
+	<tr>
+		<td><label> Department: </label> </td>
+		<td>@Html.DropDownListFor(m => m.DepartmentID, ViewBag.Departments as SelectList, "Select Department", new { @id = "ddlDepartment", @style = "width:200px;", @onchange = "javascript:GetSubDepartments(this.value);" })</td>
+	</tr>
+	<tr>
+		<td><label> Sub Department: </label></td>
+		<td>@Html.DropDownListFor(m => m.SubDepartmentID, Enumerable.Empty<SelectListItem>(), "Select Sub Department", new { @id = "ddlsubDepartment" })</td>
+	</tr>
+</table>
+<input type="submit" value="Submit" />
 }

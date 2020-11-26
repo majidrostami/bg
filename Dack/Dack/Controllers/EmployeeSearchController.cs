@@ -3,6 +3,8 @@ using Dack.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,16 +16,24 @@ namespace Dack.Controllers
         public ActionResult Index()
         {
             List<Department> departments = Departments.GetDepartments();
-            ViewBag.Departments = new SelectList(departments,"DepartmentId", "DepartmentName");
+            ViewBag.Departments = new SelectList(departments, "DepartmentId", "DepartmentName");
             return View();
         }
 
         [HttpPost]
         public ActionResult GetSubDepartmentByDepartmentId(int departmentId)
-        {           
-            List<SubDepartment> subDepartments = Departments.GetSubDepartments(departmentId); 
-            SelectList drpSubDepartments = new SelectList(subDepartments, "SubDepartmentID", "SubDepartmentName", 0);
-            return Json(drpSubDepartments);
+        {
+            try
+            {
+                List<SubDepartment> subDepartments = Departments.GetSubDepartments(departmentId);
+                SelectList drpSubDepartments = new SelectList(subDepartments, "SubDepartmentID", "SubDepartmentName", 0);
+                return Json(drpSubDepartments);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
+            }
+
         }
 
         public ActionResult GetEmployees(int departmentId, int subDepartmentId)
@@ -34,14 +44,14 @@ namespace Dack.Controllers
                 SubDepartmentID = subDepartmentId
             };
 
-			try
-			{
+            try
+            {
                 List<m_Employee> lstEmployees = EmployeeSearch.GetEmployees(employeeSearchCriteria1);
-                return Json (lstEmployees);
-			}
-			catch (Exception ex)
-			{
-                return Json("Error " + ex.Message);
+                return Json(lstEmployees);
+            }
+            catch (Exception ex)
+            {
+                return new HttpStatusCodeResult(500, ex.Message);
             }
         }
 
@@ -54,9 +64,8 @@ namespace Dack.Controllers
             }
             catch (Exception ex)
             {
-                return Json("Error " + ex.Message);
+                return new HttpStatusCodeResult(500, ex.Message); ;
             }
         }
-
     }
 }
